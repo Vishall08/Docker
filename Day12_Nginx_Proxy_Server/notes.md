@@ -123,9 +123,4 @@ Always reload Nginx after updating configuration.
 
 Shell scripts (.sh) are a great way to initialize databases in Docker containers.
 
-📚 Resources
-📘 Docker MySQL Initialization
 
-📘 Docker Networking Docs
-
-📘 Nginx Reverse Proxy Setup
