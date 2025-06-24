@@ -1,14 +1,27 @@
-# 📅 Day 01: Docker Installation and Basic Commands
+## 📅 Day 01: Docker Installation, Concepts & Basic Commands
 
-## 🧠 What I Learned
+---
 
-- Installed Docker on an Ubuntu system using `apt`.
-- Understood how to start and check the Docker service.
-- Verified Docker installation using the `hello-world` and `nginx` images.
-- Learned the difference between foreground and detached container modes.
-- Explored basic Docker CLI commands.
+### 🧠 What I Learned
 
-## 🔧 Commands Practiced
+* ✅ Basics of compute paradigms:
+
+  * **Bare Metal**: Physical servers without abstraction.
+  * **Containerization**: Lightweight, OS-level virtualization using Docker.
+  * **Virtualization**: Use of hypervisors to run multiple OS instances.
+  * **Serverless**: Fully managed execution without server management.
+
+* ✅ Installed Docker Engine on Ubuntu using `apt`.
+
+* ✅ Started and verified Docker service status.
+
+* ✅ Explored the Docker CLI: image handling, container lifecycle.
+
+* ✅ Differentiated between foreground and detached mode.
+
+---
+
+### 🔧 Commands Practiced
 
 ```bash
 # Update package repository
@@ -24,24 +37,29 @@ sudo systemctl status docker.service
 # Switch to root user
 sudo su
 
-# View Docker images
+# List Docker images
 docker images
 docker image ls
+exit
 
-# Search for an image on Docker Hub
+# Re-enter root user to continue Docker commands
+sudo su
+
+# Search for nginx image on Docker Hub
 docker search nginx
 
-# Pull an image from Docker Hub
+# Pull nginx image from Docker Hub
 docker pull nginx
 
-# Run a container in the foreground (shows output directly)
+# Run nginx container in the foreground (blocks terminal)
 docker run nginx
 
 # Check running containers
 docker ps
 
-# Run a container in detached mode with a name
+# Run nginx container in detached mode with a custom name
 docker run -d --name mynginx nginx
 
-# List running containers again
-docker ps
+# List all containers (including stopped ones)
+docker ps -a
+```
