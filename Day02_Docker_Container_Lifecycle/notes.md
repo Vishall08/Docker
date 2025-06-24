@@ -1,8 +1,8 @@
-##📅 Day 02: Docker Container Lifecycle, Ports, Exec & Cleanup
+## 📅 Day 02: Docker Container Lifecycle, Ports, Exec & Cleanup
 
 ---
 
-##🧠 What I Learned
+### 🧠 What I Learned
 
 ✅ Inspected image history and understood image layers.
 
@@ -20,7 +20,7 @@
 
 
 
-##Commands Practiced (Day 2)
+### Commands Practiced (Day 2)
 ```
 # Switch to root
 sudo su
