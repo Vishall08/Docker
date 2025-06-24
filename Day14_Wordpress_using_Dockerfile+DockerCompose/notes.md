@@ -1,13 +1,14 @@
-📘 Day 14: Running WordPress Using Dockerfile + Docker Compose
+# 📘 Day 14: Running WordPress Using Dockerfile + Docker Compose
+---
 
-🧩 Goal:
+## 🧩 Goal:
 To deploy a WordPress website connected to a MySQL database, using:
 
 A custom Dockerfile to build the MySQL image
 
 docker-compose.yml to orchestrate the WordPress and MySQL services
 
-🔧 1. Dockerfile (for MySQL container)
+### 🔧 1. Dockerfile (for MySQL container)
 ```
 FROM mysql
 
@@ -18,7 +19,7 @@ EXPOSE 3306
 
 CMD ["mysqld"]
 ```
-🔍 Explanation:
+### 🔍 Explanation:
 FROM mysql: Uses the official MySQL image as a base.
 
 ENV MYSQL_ROOT_PASSWORD Pass@123: Sets the root password for MySQL.
@@ -31,7 +32,7 @@ CMD ["mysqld"]: Starts the MySQL server when the container runs.
 
 ✅ This custom Dockerfile lets you configure MySQL with your own settings.
 
-📦 2. docker-compose.yml File
+### 📦 2. docker-compose.yml File
 ```
 services:
   mydb:
@@ -52,7 +53,7 @@ services:
       - mydb
 ```
 
-🔍 Explanation:
+### 🔍 Explanation:
 services: Defines multiple containers:
 
 ▶️ mydb (MySQL Service)
@@ -71,7 +72,7 @@ depends_on: Ensures the MySQL container (mydb) starts before WordPress.
 
 🔗 WordPress will connect to MySQL using the service name mydb as the hostname (Docker handles networking between services).
 
-💻 3. Docker Commands You Used
+### 💻 3. Docker Commands You Used
 ```
 nano Dockerfile           # Edit or create the Dockerfile
 nano docker-compose.yml   # Edit or create the docker-compose file
@@ -86,7 +87,7 @@ docker image ls           # Alias of `docker images`
 docker container ls       # Alias of `docker ps`
 ```
 
-🔍 Purpose of Each Command:
+### 🔍 Purpose of Each Command:
 docker rmi mysql: Ensures Docker rebuilds the image from Dockerfile instead of using a cached image.
 
 docker-compose up -d: Builds and starts both services in background mode.
@@ -95,7 +96,7 @@ docker ps -a / docker container ls: Helps verify if containers are running prope
 
 docker images / docker image ls: Shows which images are available (including the one built from your Dockerfile).
 
-🌐 Final Result
+### 🌐 Final Result
 Once the containers are up:
 
 Access your WordPress site via your browser at http://localhost (or your EC2/public IP if on cloud).
@@ -111,7 +112,7 @@ On first visit, WordPress will guide you through setting up the website using th
 | **Service Dependency**    | `depends_on` ensures DB starts before the app.                   |
 
 
-✅ Real-World Use Case
+### ✅ Real-World Use Case
 This setup mimics how production-grade applications like CMSs (e.g., WordPress) rely on:
 
 Multiple services
